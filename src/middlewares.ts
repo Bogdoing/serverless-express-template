@@ -14,6 +14,6 @@ export function errorHandler(err: Error, req: Request, res: Response<ErrorRespon
   res.status(statusCode);
   res.json({
     message: err.message,
-    stack: process.env.NODE_ENV === 'production' ? '🥞' : err.stack,
+    stack: 'production' === 'production' ? '🥞' : err.stack, //process.env.NODE_ENV
   });
 }
